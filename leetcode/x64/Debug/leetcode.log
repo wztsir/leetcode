@@ -1,0 +1,7 @@
+﻿  6训练机器人.cpp
+  b.cpp
+  hua1.cpp
+  正在生成代码...
+d.obj : error LNK2005: main 已经在 b.obj 中定义
+hua1.obj : error LNK2005: main 已经在 b.obj 中定义
+D:\Project\C++\leetcode\x64\Debug\leetcode.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
