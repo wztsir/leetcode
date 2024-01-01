@@ -576,6 +576,8 @@ fill(f.begin(), f.end(), -1);
 
 
 
+### 添加元素
+
 1. **`push`方法**：
 
    - `push`方法用于将已经创建的元素副本添加到队列的末尾。
@@ -601,6 +603,19 @@ fill(f.begin(), f.end(), -1);
    cppCopy codestd::queue<std::pair<int, std::string>> q;
    q.emplace(1, "one"); // 使用参数构造一个新的pair对象并将其添加到队列中
    ```
+
+### priority_queue
+
+```c++
+    priority_queue<int, vector<int>, less<int>> q1;
+    priority_queue<int, vector<int>, greater<int>> q2;
+```
+
+- `int` 表示队列中存储的数据类型为整数。
+- `vector<int>` 表示使用vector作为底层数据结构来存储元素。
+- `greater<int>` 是一个比较函数对象，用于定义队列中元素的排序规则。在这里，它表示按照降序(从小到大)对元素进行排序。
+
+定义排序规则，从0往后看，即越来越大，greater<int>
 
 ## lambda
 
