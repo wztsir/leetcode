@@ -1968,6 +1968,10 @@ int solution(int[] nums, int target) {
 
 
 
+## 位运算
+
+参考[灵茶山艾府](https://leetcode.cn/u/endlesscheng/) https://leetcode.cn/circle/discuss/CaOJ45/
+
 ## python语法规则
 
 ### 计算
