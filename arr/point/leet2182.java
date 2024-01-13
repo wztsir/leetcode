@@ -1,5 +1,3 @@
-package 字符串;
-
 import java.util.Collections;
 import java.util.NavigableMap;
 import java.util.TreeMap;
