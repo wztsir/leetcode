@@ -163,9 +163,15 @@ node->value = 0;
 
 ## 考试注意事项
 
-180分钟，一共3小时
+## 评测机反推应该用的模型
 
-四道题：20，25，25，30分
+1s大概运行10 * 8 次
+
+时间复杂度没有超过 10 * 8 即合理的
+
+2 * 15 = 32768； 2 * 16 = 65536；  2 * 63 = 10 * 18
+
+![image-20240222173900751](\img\image-20240222173900751.png)
 
 ## 弱提示
 
@@ -907,7 +913,21 @@ for(auto& it : words){
 
 可以使用方括号访问键对应的值 `map[key]`。需要注意的是，如果该 `key` 不存在，C++ 会自动创建这个 key，并把 `map[key]` 赋值为 0。
 
+## cstring
 
+头文件
+
+```
+#include<cstring>
+```
+
+1. **内存操作函数**：
+
+   - `void *memcpy(void *dest, const void *src, size_t n);`
+   - `void *memmove(void *dest, const void *src, size_t n);`
+   - `void *memset(void *str, int c, size_t n);`
+
+   常用的就是memcpy函数
 
 ## String
 
@@ -1971,6 +1991,10 @@ int solution(int[] nums, int target) {
 ## 位运算
 
 参考[灵茶山艾府](https://leetcode.cn/u/endlesscheng/) https://leetcode.cn/circle/discuss/CaOJ45/
+
+char 类型的 ‘0’，‘1’可以与 1异或变成对方，细节的ASCII码分别是48， 49，异或发生了变化   110000  
+
+
 
 ## python语法规则
 
