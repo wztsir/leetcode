@@ -52,7 +52,13 @@
         "ctime": "cpp",
         "set": "cpp",
         "optional": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "any": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "regex": "cpp",
+        "climits": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "code-runner.executorMap": {
