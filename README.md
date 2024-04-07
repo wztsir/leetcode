@@ -1,4 +1,4 @@
-C++刷题手册
+ C++刷题手册
 
 
 
@@ -163,6 +163,15 @@ node->value = 0;
 
 ## 考试注意事项
 
+头文件
+
+```c++
+#include<bits/stdc++.h>
+//bits/stdc++.h
+```
+
+
+
 ## 评测机反推应该用的模型
 
 1s大概运行10 * 8 次
@@ -172,6 +181,8 @@ node->value = 0;
 2 * 15 = 32768； 2 * 16 = 65536；  2 * 63 = 10 * 18
 
 ![image-20240222173900751](img\image-20240222173900751.png)
+
+
 
 ## 弱提示
 
@@ -1480,7 +1491,7 @@ set、map的find函数
 
 
 
-oj平台 ：online judge，即线上评测
+oj平台 ：online judge，即线上评测 
 
 核心代码模式 ： 如leetcode
 
@@ -1491,6 +1502,16 @@ acm模式：如pat，如洛谷，如牛客网
 
 
 ## 数组技巧
+
+### 初始化
+
+```
+vector<TreeNode*> dp[20];
+```
+
+
+
+每个dp的位置都是vector<TreeNode*>
 
 ### 双指针
 
@@ -1580,6 +1601,68 @@ int need = 1, sum =0, s = nums.size();//一定存在数据，先开了一个包
 多次修改某个区间，输出最终结果：「差分」
 多次修改某个区间，求区间和：「线段树」、「树状数组」（看修改区间范围大小）
 多次将某个区间变成同一个数，求区间和：「线段树」、「树状数组」（看修改区间范围大小）
+
+单点修改，区间查询， 树状数组
+
+### 树状数组
+
+根据每个位置的最后一位0的个数确定该节点的层数
+
+```c++
+int lowbit(int x)
+{
+    return x&-x;
+}
+```
+
+奇数的lowbit都是1，就是2的0次方
+
+C[x]求和范围，（x-lowbit[x],x]
+
+x的父节点，x + lowbit[x]
+
+整体模板
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+int n, m;//树状数组长度, 操作数
+const int N = 100009;
+int a[N], tr[N];
+int lowbit(int x){
+    return x & -x;
+}
+//第x个数加上v
+void add(int x, int v){
+    for(int i = x; i <= n; i += lowbit(i)){
+        tr[i] += v;
+    }
+}
+//返回x的前缀和
+int qurry(int x){
+    int res = 0;
+    for(int i = x; i != 0; i -= lowbit(i))
+        res += tr[i];
+    
+    return res;
+}
+int main(){
+    cin >> n >> m;
+    for(int i = 1; i <= n; i++){
+        scanf("%d", &a[i]);
+    }
+    for(int i = 1; i <= n; i++){//构造tr
+        add(i, a[i]);
+    }
+    int k, x, y;
+    while(m--){
+        scanf("%d%d%d", &k, &x, &y);
+        if(k == 0)printf("%d\n", qurry(y) - qurry(x-1));
+        else add(x, y);
+    }
+    return 0;
+}
+```
 
 
 
