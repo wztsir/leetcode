@@ -59,7 +59,10 @@
         "stacktrace": "cpp",
         "regex": "cpp",
         "climits": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "bitset": "cpp",
+        "format": "cpp",
+        "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "code-runner.executorMap": {

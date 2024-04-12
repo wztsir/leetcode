@@ -286,7 +286,7 @@ long long也是一样的：在 C++ 中，对于加法、减法、乘法和除法
 
 scanf
 
-printf
+
 
 同时需要掌握
 
@@ -412,6 +412,20 @@ scanf("%d%d", &R, &C);
 
 
 同时**换行和空格，scanf会自动停止**
+
+#### 读入字符串
+
+`scanf`的`%s`不能直接读入string， string是c++中的，用cin读入
+
+### printf输出
+
+long long 使用%lld
+
+```c++
+printf("%lld ", n);
+```
+
+
 
 ## for循环
 
@@ -1985,7 +1999,9 @@ void u(int a, int b) {
 
 
 
+### 背包问题
 
+底层是选择模型，选或者不选，通过满足某种条件，达到某种目标最大
 
 
 
