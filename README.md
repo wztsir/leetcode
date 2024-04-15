@@ -1415,6 +1415,10 @@ sort(intervals.begin(), intervals.end(), [](const vector&lt;int&gt;&amp; u, cons
 
 记忆 ，可以让大数小数交换位置，gcd左边是被除数，右边是除数
 
+gcd(a, b) = gcd(b, a % b);
+
+终止条件，b不能作为除数的时候，就需要返回了
+
 ```c++
 int gcd(int a,int b){
 	return b==0?a:gcd(b,a%b);
@@ -1696,6 +1700,50 @@ int main(){
         if(k == 0)printf("%d\n", qurry(y) - qurry(x-1));
         else add(x, y);
     }
+    return 0;
+}
+```
+
+
+
+### 矩阵乘法与快速幂
+
+```c++
+// 矩阵乘法加快速幂
+#include<bits/stdc++.h>
+using namespace std;
+const int N =3;
+int n, m;
+// c = a * b
+void qmul(int a[][N], int b[][N], int c[][N]){
+
+    int t[N][N];
+    memset(t, 0, sizeof(t));
+    for(int i = 0; i < N; i++){
+        for(int j = 0; j < N; j++){
+            for(int k = 0; k < N; k++){
+                t[i][j] =(t[i][j] + ((long long)a[i][k] * b[k][j]) % m) % m;
+            }
+        }
+    }
+    memcpy(c, t, sizeof(t));
+
+}
+int main(){
+    
+    cin >> n >> m;
+    int a[N][N] = {0, 1, 0};
+    int b[N][N] = {
+        {0, 1, 0},
+        {1, 1, 1},
+        {0, 0, 1}
+    };
+    while(n){
+        if(n & 1)qmul(a, b, a);
+        qmul(b, b, b);
+        n >>= 1;
+    }
+    cout << a[0][2] << endl;
     return 0;
 }
 ```
@@ -2001,9 +2049,13 @@ void u(int a, int b) {
 
 ### 背包问题
 
+#### 0-1背包问题
+
 底层是选择模型，选或者不选，通过满足某种条件，达到某种目标最大
 
+#### 完全背包问题
 
+每种背包都有无限量供应
 
 ## 二分法搜索
 
