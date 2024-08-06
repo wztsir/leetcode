@@ -15,5 +15,6 @@ public:
     ListNode* next;
     ListNode(int v, ListNode* l): val(v), next(l){}
     ListNode(int val) : val(val), next(nullptr) {}
+    ListNode() : val(0), next(nullptr) {}
 };
 #endif // LISTNODE_H
