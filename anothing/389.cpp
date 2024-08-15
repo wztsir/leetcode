@@ -15,6 +15,9 @@
 using namespace std;
 char findTheDifference(string s, string t) {
     vector<int> arr(26, 0);
+    for(auto a : arr){
+        
+    }
     for(int i = 0; i < s.size(); i++){
         arr[s[i] - 'a'] ++;
     }
